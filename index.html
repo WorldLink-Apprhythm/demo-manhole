@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>マンホール管理画面(デモ)</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+            integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+        <title>Document</title>
+    </head>
+    <style>
+        /* body {
+        text-align: center;
+        background-color: #95b9db; background-image: url("https://www.nagashima-imono.co.jp/wp/wp-content/uploads/2019/10/ASPS_VVLB_preview.png"); background-position: center center; background-size: auto; background-repeat: repeat; background-attachment: fixed;
+        } */
+
+        body {
+            color: #333;
+        }
+
+        .button-success {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background: rgb(28, 184, 65);
+        }
+
+        .button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background: rgb(66, 184, 221);
+        }
+
+        .button-warning {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background: rgb(202, 60, 60);
+        }
+
+        #admin-number {
+            border: 1px solid #cbcbcb;
+            background-color: #f2f2f2;
+            padding: 5px 15px;
+            width: 50%;
+            margin: 0px auto 20px;
+        }
+    </style>
+
+    <body>
+        <div class="pure-menu pure-menu-horizontal" style="background-color: #fafafa;">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item pure-menu-selected">
+                    <a href="#" class="pure-menu-link">マンホール管理画面</a>
+                </li>
+                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                    <a href="#" id="menuLink1" class="pure-menu-link">カテゴリ</a>
+                    <ul class="pure-menu-children">
+                        <li class="pure-menu-item">
+                            <a href="#" class="pure-menu-link">上水道</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="#" class="pure-menu-link">下水道</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="#" class="pure-menu-link">災害用トイレ</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class='pure-g'>
+
+            <div class="pure-u-1-2" style="text-align:center;">
+                <h1 id="admin-number">管理番号: <span id="admin-number-content">000001</span></h1>
+                <div>
+                    <img id="manhole-image" width="300px" height="300px"
+                        src="https://zukan.com/media/leaf/original/56666.jpg?of=webp&width=1656&height=1240&type=resize"
+                        alt="マンホール画像">
+                    <div style="margin-top: 10px;">
+                        <a class="button-secondary pure-button" href="#">編集</a></td>
+                        <a class="button-warning pure-button" href="#">削除</a></td>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pure-u-1-2" style="text-align:center;">
+                <table class="pure-table pure-table-striped">
+                    <thead>
+                        <tr>
+                            <th colspan="2">製品概要</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>設置個所所在地</td>
+                            <td id="address">埼玉県日高市○○町□□-△△</td>
+                        </tr>
+                        <tr>
+                            <td>緯度経度</td>
+                            <td>35.2325, 135.24566</td>
+                        </tr>
+                        <tr>
+                            <td>用途</td>
+                            <td id="usage">下水道</td>
+                        </tr>
+                        <tr>
+                            <td>開閉器種別</td>
+                            <td id="open-close-type">A-1(型)</td>
+                        </tr>
+                        <tr>
+                            <td>特徴</td>
+                            <td>
+                                <ul>
+                                    <li>コントロールテーパーが蓋と枠の異常食い込みを防止します。</li>
+                                    <li>消防車のデザインに高彩度のカラー樹脂充填を施す事により視認性を高め、消火栓を早期に発見できます。</li>
+                                    <li>スリップ防止デザインにカラー樹脂充填をしたASPS-II(ASPS-Color)はFCT専用デザインです。</li>
+                                    <li>一般デザインにすることによりバルブ用鉄蓋としてもご使用いただけます</li>
+                                    <li>公益社団法人 日本水道協会 JWWA規格適合品</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>最終撮影日</td>
+                            <td>2023/01/30 10:13:25</td>
+                        </tr>
+                        <tr>
+                            <td>地図</td>
+                            <td><a class="button-success pure-button"
+                                    href="https://app.4dlink.com/auth/share/s_1999_C1W4MRF5FS_/NOOLTXKU3VPRCXWPPZUN1LEQYEQEELAIJ4S4KLHL12DGRMFWAW"
+                                    target="_blank">4DLinkで確認</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+    <script>
+        const masterManhole = {
+            1: {
+                "adminNumber": "000001",
+                "imageUrl": "https://zukan.com/media/leaf/original/56666.jpg?of=webp&width=1656&height=1240&type=resize",
+                "address": "埼玉県日高市○○町□□-△△",
+                "useage": "下水道",
+                "openCloseType": "カイラスター Ｈ－６型"
+            },
+            2: {
+                "adminNumber": "000002",
+                "imageUrl": "https://zukan.com/media/leaf/original/55105.jpg?of=webp&width=1656&height=1240&type=resize",
+                "address": "埼玉県日高市□〇町△-XX",
+                "useage": "消化栓",
+                "openCloseType": "Ｔ－フック"
+            },
+            3: {
+                "adminNumber": "000003",
+                "imageUrl": "https://zukan.com/media/leaf/original/55464.jpg?of=webp&width=1656&height=1240&type=resize",
+                "address": "埼玉県狭山市□〇町△-XX",
+                "useage": "上水道",
+                "openCloseType": "Ｊフック２２"
+            },
+            4: {
+                "adminNumber": "000004",
+                "imageUrl": "https://zukan.com/media/leaf/original/70171.jpg?of=webp&width=1656&height=1240&type=resize",
+                "address": "埼玉県吉見町△-XX",
+                "useage": "下水道",
+                "openCloseType": "カイラスター Ｂ－２型"
+            },
+            5: {
+                "adminNumber": "000005",
+                "imageUrl": "https://zukan.com/media/leaf/original/69094.jpg?of=webp&width=1656&height=1240&type=resize",
+                "address": "埼玉県春日部市△-XX",
+                "useage": "上水道",
+                "openCloseType": "カイラスター Ｂ－２型"
+            },
+            999: {
+                "adminNumber": "-",
+                "imageUrl": "",
+                "address": "-",
+                "useage": "-",
+                "openCloseType": "-"
+            }
+        }
+
+        const adminNumberElement = document.getElementById("admin-number-content");
+        const manholeImageElement = document.getElementById("manhole-image");
+        const addressElement = document.getElementById("address");
+        const usageElement = document.getElementById("usage");
+        const openCloseTypeElement = document.getElementById("open-close-type");
+
+        const getQueryParam = () => {
+            const url = window.location.search;
+            const queryParam = new URLSearchParams(url);
+            const manholeId = queryParam.get("id");
+            return manholeId
+        };
+
+        const updateScreenById = () => {
+            const manholeId = getQueryParam();
+            if (!masterManhole[manholeId]) {
+                const updateContent = masterManhole[999]
+                adminNumberElement.innerText = updateContent.adminNumber;
+                manholeImageElement.src = updateContent.imageUrl;
+                addressElement.innerText = updateContent.address;
+                usageElement.innerText = updateContent.useage;
+                openCloseTypeElement.innerText = updateContent.openCloseType;
+            } else {
+                const updateContent = masterManhole[manholeId]
+                adminNumberElement.innerText = updateContent.adminNumber;
+                manholeImageElement.src = updateContent.imageUrl;
+                addressElement.innerText = updateContent.address;
+                usageElement.innerText = updateContent.useage;
+                openCloseTypeElement.innerText = updateContent.openCloseType;
+            }
+        }
+
+        updateScreenById()
+    </script>
+
+    </html>
+
+</html>
